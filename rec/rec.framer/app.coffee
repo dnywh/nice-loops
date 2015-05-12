@@ -59,13 +59,13 @@ stopText.centerX()
 stopText.centerY()
 
 # Time
-time = new Layer
-	superLayer: box
-	x: 33
+# time = new Layer
+# 	superLayer: box
+# 	x: 33
 # 	Default x is 66
-	width:43, height:18, image:"images/time.gif"
-	opacity: 0
-time.centerY()
+# 	width:43, height:18, image:"images/time.gif"
+# 	opacity: 0
+# time.centerY()
 
 # Recording indicator
 indicator = new Layer
@@ -124,26 +124,28 @@ rec.on Events.Click, ->
 			pulseIn.start()
 		pulseIn.on 'end', ->
 			pulseOut.start()
+			
 	Utils.delay 0.7, ->
 # 		Push and fade in time
-		time.animate
-			properties:
-				x: 60
-				opacity: 1
-			curve: 'spring(200, 25, 10)'
+# 		time.animate
+# 			properties:
+# 				x: 60
+# 				opacity: 1
+# 			curve: 'spring(200, 25, 10)'
 
 
-# stop.on Events.Click, ->
+stop.on Events.Click, ->
 # 	
-# 	this.fadeOut()
+	this.fadeOut()
+	
+	Utils.delay 0.2, ->
+		indicator.fadeOut()
 # 	this.animate
 # 		properties:
 # 			scale: 1
 # 			borderRadius: 74
 # 	this.visible = false
 # 	
-# 	rec.animate
-# 		properties:
-# 			scale: 1
-# 		curve: "ease-in-out"
-# 		time: 0.3
+	rec.animate
+		properties:
+			scale: 1
