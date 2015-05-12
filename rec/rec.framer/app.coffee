@@ -43,7 +43,7 @@ stop = new Layer
 	backgroundColor: '#FFF'
 	width: 64
 	height: 64
-	borderRadius: 74;
+	borderRadius: 74
 	scale: 0.2
 # 	Hidden to start with
 # 	visible = false
@@ -100,7 +100,7 @@ pulseIn = new Animation
 rec.on Events.Click, ->
 	recText.opacity = 0
 	stop.fadeIn()
-	stop.visible = true
+# 	stop.visible = true
 	stop.animate
 		properties:
 			scale: 1
@@ -113,9 +113,8 @@ rec.on Events.Click, ->
 			scale: 6
 		curve: "ease-in-out"
 		time: 0.3
-		
-	
-	# Start pulse and time
+
+	# Start pulse
 	Utils.delay 0.5, ->
 		indicator.fadeIn()
 		pulseOut.start()
@@ -125,27 +124,33 @@ rec.on Events.Click, ->
 		pulseIn.on 'end', ->
 			pulseOut.start()
 			
-	Utils.delay 0.7, ->
-# 		Push and fade in time
-# 		time.animate
-# 			properties:
-# 				x: 60
-# 				opacity: 1
-# 			curve: 'spring(200, 25, 10)'
-
 
 stop.on Events.Click, ->
-# 	
+	# Get rid of stop button
 	this.fadeOut()
+	Utils.delay 0.2, ->
+		# Restore stop button to starting defaults
+		this.borderRadius = 74
+		this.scale = 0.2
+# 		this.visible = false
+		stopText.fadeOut()
 	
+	# Fade out indicator
 	Utils.delay 0.2, ->
 		indicator.fadeOut()
-# 	this.animate
-# 		properties:
-# 			scale: 1
-# 			borderRadius: 74
-# 	this.visible = false
-# 	
+		
+	# Bring back record button
 	rec.animate
 		properties:
 			scale: 1
+	Utils.delay 0.1, ->
+		recText.fadeIn()
+		
+	
+		
+		
+		
+		
+
+			
+			
