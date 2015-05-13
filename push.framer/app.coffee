@@ -28,7 +28,7 @@ left = new Layer
 	opacity: 0.75
 	height: high
 	width: wide
-	borderRadius: 2
+	borderRadius: 3
 left.centerY()
 
 right = new Layer
@@ -38,7 +38,7 @@ right = new Layer
 	opacity: 0.75
 	height: high
 	width: wide
-	borderRadius: 2
+	borderRadius: 3
 	x: wide+gutter
 right.centerY()
 
@@ -48,7 +48,7 @@ Switches = [left, right]
 for layers in Switches
 	layers.states.add
 		one: scale: 0.8, opacity: 0.5, borderRadius: 6
-		two: scale: 1.0, opacity: 0.75, borderRadius: 2
+		two: scale: 1.0, opacity: 0.75, borderRadius: 3
 		
 left.on Events.TouchStart, ->
 	this.states.next('one')
