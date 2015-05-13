@@ -53,12 +53,54 @@ stop.states.add
 		scale: 1
 		borderRadius: 3
 		opacity: 1
+		
+# Recording indicator
+indicator = new Layer
+	superLayer: box
+	x: 33*2
+	width: 16*2
+	height: 16*2
+	borderRadius: 16
+	backgroundColor: '#FFF'
+indicator.centerY()
+# Start small
+indicator.scale = 0.75
+indicator.hide()
+
+# Animation for indicator
+pulseOut = new Animation
+	layer: indicator
+	properties:
+		scale: 1
+	curve: "ease-in-out"
+	time: 1.3	
+	
+pulseIn = new Animation
+	layer: indicator
+	properties:
+		scale: 0.75
+	curve: "ease-in-out"
+	time: 1.3
+		
 	
 # The events
 rec.on Events.Click, ->
 	rec.states.next()
 	stop.states.next()
 	
+	# Start pulse
+	Utils.delay 0.33, ->
+		indicator.fadeIn()
+		pulseOut.start()
+		# Repeat pulse
+		pulseOut.on 'end', ->
+			pulseIn.start()
+		pulseIn.on 'end', ->
+			pulseOut.start()
+	
 stop.on Events.Click, ->
+	indicator.hide()
+	pulseIn.stop()
+	pulseOut.stop()
 	rec.states.next()
 	stop.states.next()
