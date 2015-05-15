@@ -13,7 +13,7 @@ kick = new Audio 'kick.mp3'
 
 # Variables
 wide = 160
-high = 720
+high = 160
 gutter = 20
 bgFill = '#7F78F4'
 
@@ -78,8 +78,11 @@ four = new Layer
 four.centerY()
 
 
-# Create an array for the two layers
+# Create an array for the keys
 Switches = [one, two, three, four]
+
+# Create an array for the sounds
+Sounds = [cowbell, clave, conga, kick]
 
 for layers in Switches
 	layers.states.add
@@ -87,32 +90,33 @@ for layers in Switches
 		two: scale: 1.0, opacity: 0.75, borderRadius: 3
 		
 one.on Events.TouchStart, ->
-	this.states.next('one')
 	bg.backgroundColor = '#78f47f'
+	this.states.next('one')
+	cowbell.play()
 one.on Events.TouchEnd, ->
 	this.states.next('two')
-	cowbell.play()
 
 two.on Events.TouchStart, ->
 	bg.backgroundColor = '#f47f78'
 	this.states.next('one')
+	clave.play()
 two.on Events.TouchEnd, ->
 	this.states.next('two')
-	clave.play()
 	
 three.on Events.TouchStart, ->
 	bg.backgroundColor = '#0FB0F4'
 	this.states.next('one')
+	conga.play()
 three.on Events.TouchEnd, ->
 	this.states.next('two')
-	conga.play()
 	
 four.on Events.TouchStart, ->
 	bg.backgroundColor = '#FDA155'
 	this.states.next('one')
+	kick.play()
 four.on Events.TouchEnd, ->
 	this.states.next('two')
-	kick.play()
 	
-# bff6fa #FDA155
-
+# Ability to reset background colour
+bg.on Events.Click, ->
+	bg.backgroundColor = bgFill
