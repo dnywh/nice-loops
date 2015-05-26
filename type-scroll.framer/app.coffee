@@ -22,14 +22,13 @@ gutter = 200
 # variables for the articles
 aWidth = aHeight = 250
 aGutter = 30
-aWrapGutter = 340
+aWrapGutter = 60
 
 # the article superLayer
 articleWrapper = new ScrollComponent
 	width: (aWidth+aGutter)*3
 	height: aHeight
 	x: leftMargin
-	y: aWrapGutter
 	backgroundColor: 'transparent'
 	scrollVertical: false
 
@@ -53,6 +52,7 @@ for i in articles
 	i.borderRadius = 2
 	i.width = aWidth
 	i.height = aHeight
+	i.visible = false
 	
 # articles start position outside of screen
 articleWrapper.x = Screen.width+buffer
@@ -61,7 +61,7 @@ articleWrapper.x = Screen.width+buffer
 header1 = new Layer
 	y:gutter
 header2 = new Layer
-	y:header1.y+gutterGap
+	y:header1.y+gutter
 header3 = new Layer
 	y:header2.y+gutter
 header4 = new Layer
@@ -85,52 +85,58 @@ header1.states.add
 		width: largeWidth
 		height: largeHeight
 	inactive:
-		opacity: header1.opacity
-		width: header1.width
-		height: header1.height
+		opacity: 0.5
+		width: width
+		height: height
 header2.states.add
 	active:
 		opacity: 1
 		width: largeWidth
 		height: largeHeight
-		y: aWrapGutter
-	inactive:
-		opacity: header2.opacity
-		width: header2.width
-		height: header2.height
 		y: header2.y
+	inactive:
+		opacity: 0.5
+		width: width
+		height: height
+		y: header2.y + articleWrapper.height
 	inactiveUp:
-		opacity: header2.opacity
-		width: header2.width
-		height: header2.height
-		y: header2.y-360
+		opacity: 0.5
+		width: width
+		height: height
+		y: header2.y
 header3.states.add
 	active:
 		opacity: 1
 		width: largeWidth
 		height: largeHeight
-		y: header3.y-420
-	inactive:
-		opacity: header3.opacity
-		width: header3.width
-		height: header3.height
 		y: header3.y
+	inactive:
+		opacity: 0.5
+		width: width
+		height: height
+		y: header3.y + articleWrapper.height
 	inactiveUp:
-		opacity: header3.opacity
-		width: header3.width
-		height: header3.height
-		y: header3.y-420
+		opacity: 0.5
+		width: width
+		height: height
+		y: header3.y
 header4.states.add
 	active:
 		opacity: 1
 		width: largeWidth
 		height: largeHeight
-		y: header4.y-460
-	inactive:
-		opacity: header4.opacity
-		width: header4.width
-		height: header4.height
 		y: header4.y
+	inactive:
+		opacity: 0.5
+		width: width
+		height: height
+		y: header4.y + articleWrapper.height
+	inactiveUp:
+		opacity: 0.5
+		width: width
+		height: height
+		y: header4.y
+
 
 # custom animations
 # moving out the article superLayer
@@ -157,48 +163,39 @@ Layer::kill = ->
 	Utils.delay 0.2, ->
 		articleWrapper.x = Screen.width+buffer
 		
-		
+# starting positions
+# accommodate the articles
+header2.y += articleWrapper.height
+header3.y += articleWrapper.height
+header4.y += articleWrapper.height
+
+articleWrapper.y = header1.maxY+aWrapGutter
+aWrapY = articleWrapper.y
 # starting animations
 articleWrapper.moveIn()
 header1.states.switch('active')
 
 # events
 header1.on Events.Click, ->
-	# only kill & reset the articleWrapper if it's somewhere else (this header will therefore be inactive)
-	if header1.opacity < 1
-		articleWrapper.kill()
-		Utils.delay 0.2, ->
-			articleWrapper.y = header1.y + 140
-			articleWrapper.moveIn()
-	
-	header1.states.switch('active')
 	header2.states.switch('inactive')
 	header3.states.switch('inactive')
 	header4.states.switch('inactive')
+	header1.states.switch('active')
 	
 header2.on Events.Click, ->
-	articleWrapper.kill()
-
-	header2.states.switch('active')
-
-	Utils.delay 0.2, ->
-		articleWrapper.y = header2.y + 140
-		articleWrapper.moveIn()
-		
 	header1.states.switch('inactive')
 	header3.states.switch('inactive')
 	header4.states.switch('inactive')
+	header2.states.switch('active')
 	
 header3.on Events.Click, ->
 	header1.states.switch('inactive')
 	header2.states.switch('inactiveUp')
-	
+	header4.states.switch('inactive')
 	header3.states.switch('active')
 	
-	header4.states.switch('inactive')
 header4.on Events.Click, ->
-	header4.states.switch('active')
-	
 	header1.states.switch('inactive')
 	header2.states.switch('inactiveUp')
 	header3.states.switch('inactiveUp')
+	header4.states.switch('active')
