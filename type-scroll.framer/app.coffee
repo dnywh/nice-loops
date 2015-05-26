@@ -3,10 +3,8 @@ shortcuts = require "shortcuts"
 Framer.Defaults.Animation =
 	curve: 'spring(260, 21, 0)'
 	
-bgBlue = new BackgroundLayer
+bg = new BackgroundLayer
 	backgroundColor: '#00B1EF'
-bgRed = new BackgroundLayer
-	backgroundColor: 'red'
 	
 # variable to help with spring animation
 buffer = 50
@@ -26,7 +24,7 @@ aWrapGutter = 60
 
 # the article superLayer
 articleWrapper = new ScrollComponent
-	width: (aWidth+aGutter)*3
+	width: (aWidth+aGutter)*4
 	height: aHeight
 	x: leftMargin
 	backgroundColor: 'transparent'
@@ -41,9 +39,11 @@ article2 = new Layer
 	x: aWidth+aGutter
 article3 = new Layer
 	x: aWidth+aGutter+aWidth+aGutter
+article4 = new Layer
+	x: aWidth+aGutter+aWidth+aGutter+aWidth+aGutter
 	
 # put them into an array for easy access
-articles = [article1, article2, article3]
+articles = [article1, article2, article3, article4]
 
 # easy access as mentioned
 for i in articles
@@ -52,7 +52,6 @@ for i in articles
 	i.borderRadius = 2
 	i.width = aWidth
 	i.height = aHeight
-	i.visible = false
 	
 # articles start position outside of screen
 articleWrapper.x = Screen.width+buffer
@@ -169,33 +168,71 @@ header2.y += articleWrapper.height
 header3.y += articleWrapper.height
 header4.y += articleWrapper.height
 
-articleWrapper.y = header1.maxY+aWrapGutter
+articleWrapper.y = header1.maxY+40*1.5
 aWrapY = articleWrapper.y
+
 # starting animations
 articleWrapper.moveIn()
 header1.states.switch('active')
 
 # events
 header1.on Events.Click, ->
+	if this.opacity < 1
+		articleWrapper.kill()
+		articleWrapper.moveOut()
+		Utils.delay 0.2, ->
+				articleWrapper.y = header1.maxY+40
+				articleWrapper.moveIn()
+			
 	header2.states.switch('inactive')
 	header3.states.switch('inactive')
 	header4.states.switch('inactive')
 	header1.states.switch('active')
 	
+	bg.hueRotate = 0
+	
 header2.on Events.Click, ->
+	if this.opacity < 1
+		articleWrapper.kill()
+		articleWrapper.moveOut()
+		Utils.delay 0.2, ->
+				articleWrapper.y = header2.maxY+40
+				articleWrapper.moveIn()
+	
 	header1.states.switch('inactive')
 	header3.states.switch('inactive')
 	header4.states.switch('inactive')
 	header2.states.switch('active')
 	
+	bg.hueRotate = 90
+			
 header3.on Events.Click, ->
+	if this.opacity < 1
+		articleWrapper.kill()
+		articleWrapper.moveOut()
+		Utils.delay 0.2, ->
+				articleWrapper.y = header3.maxY+40
+				articleWrapper.moveIn()
+			
 	header1.states.switch('inactive')
 	header2.states.switch('inactiveUp')
 	header4.states.switch('inactive')
 	header3.states.switch('active')
 	
+	bg.hueRotate = 180
+	
 header4.on Events.Click, ->
+	if this.opacity < 1
+		articleWrapper.kill()
+		articleWrapper.moveOut()
+		Utils.delay 0.2, ->
+				articleWrapper.y = header4.maxY+40
+				articleWrapper.moveIn()
+			
 	header1.states.switch('inactive')
 	header2.states.switch('inactiveUp')
 	header3.states.switch('inactiveUp')
 	header4.states.switch('active')
+	
+	bg.hueRotate = 270
+
