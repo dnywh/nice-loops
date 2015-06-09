@@ -48,7 +48,7 @@ exports.OrientationEvents = ->
 			window.addEventListener "deviceorientation", _orientation
 			window.addEventListener "devicemotion", _motion
 		else 
-			print "Device orientation and motion events are not supported on this device."
+			print "Device orientation and motion events are not support on this device."
 
 # –––– PRIVATE
 

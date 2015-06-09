@@ -49,7 +49,7 @@ exports.OrientationEvents = function() {
         window.addEventListener("deviceorientation", _orientation);
         return window.addEventListener("devicemotion", _motion);
       default:
-        return print("Device orientation and motion events are not supported on this device.");
+        return print("Device orientation and motion events are not support on this device.");
     }
   })();
 };
