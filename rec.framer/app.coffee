@@ -7,7 +7,7 @@ Framer.Defaults.Animation =
 	curve: 'spring(300, 35, 10)'
 
 # Background/backdrop fill
-# bg = new BackgroundLayer
+bg = new BackgroundLayer
 	backgroundColor: '#CFCFCF'
 # 	
 # The background box for all this
