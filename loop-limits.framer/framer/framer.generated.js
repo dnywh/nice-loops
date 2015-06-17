@@ -8,53 +8,143 @@ window.__imported__["automat/layers.json.js"] = [
     "children" : [
       {
         "maskFrame" : null,
-        "id" : "958EEB92-C633-4306-A8DE-C070746E4373",
+        "id" : "F3308075-2E3D-45F6-A065-4310EE73A15D",
         "visible" : true,
         "children" : [
 
         ],
         "image" : {
-          "path" : "images\/Layer-forwardArrow-958EEB92-C633-4306-A8DE-C070746E4373.png",
+          "path" : "images\/Layer-topBar2-F3308075-2E3D-45F6-A065-4310EE73A15D.png",
           "frame" : {
-            "y" : 86,
-            "x" : 662,
-            "width" : 52,
-            "height" : 47
+            "y" : 73,
+            "x" : 109,
+            "width" : 532,
+            "height" : 71
           }
         },
         "imageType" : "png",
         "layerFrame" : {
-          "y" : 86,
-          "x" : 662,
-          "width" : 52,
-          "height" : 47
+          "y" : 73,
+          "x" : 109,
+          "width" : 532,
+          "height" : 71
         },
-        "name" : "forwardArrow"
+        "name" : "topBar2"
       },
       {
         "maskFrame" : null,
-        "id" : "18920C1A-C11E-4440-A4BB-B26B9B48BE8C",
-        "visible" : true,
         "children" : [
+          {
+            "maskFrame" : null,
+            "id" : "958EEB92-C633-4306-A8DE-C070746E4373",
+            "visible" : true,
+            "children" : [
 
-        ],
-        "image" : {
-          "path" : "images\/Layer-pgController-18920C1A-C11E-4440-A4BB-B26B9B48BE8C.png",
-          "frame" : {
-            "y" : 176,
-            "x" : 320,
-            "width" : 110,
-            "height" : 14
+            ],
+            "image" : {
+              "path" : "images\/Layer-forwardArrow-958EEB92-C633-4306-A8DE-C070746E4373.png",
+              "frame" : {
+                "y" : 86,
+                "x" : 662,
+                "width" : 52,
+                "height" : 47
+              }
+            },
+            "imageType" : "png",
+            "layerFrame" : {
+              "y" : 86,
+              "x" : 662,
+              "width" : 52,
+              "height" : 47
+            },
+            "name" : "forwardArrow"
+          },
+          {
+            "maskFrame" : null,
+            "id" : "18920C1A-C11E-4440-A4BB-B26B9B48BE8C",
+            "visible" : true,
+            "children" : [
+
+            ],
+            "image" : {
+              "path" : "images\/Layer-pgController-18920C1A-C11E-4440-A4BB-B26B9B48BE8C.png",
+              "frame" : {
+                "y" : 176,
+                "x" : 320,
+                "width" : 110,
+                "height" : 14
+              }
+            },
+            "imageType" : "png",
+            "layerFrame" : {
+              "y" : 176,
+              "x" : 320,
+              "width" : 110,
+              "height" : 14
+            },
+            "name" : "pgController"
+          },
+          {
+            "maskFrame" : null,
+            "id" : "962E8BC7-6783-4D83-B339-DFE08A4821BB",
+            "visible" : true,
+            "children" : [
+
+            ],
+            "image" : {
+              "path" : "images\/Layer-exit-962E8BC7-6783-4D83-B339-DFE08A4821BB.png",
+              "frame" : {
+                "y" : 85,
+                "x" : 42,
+                "width" : 50,
+                "height" : 50
+              }
+            },
+            "imageType" : "png",
+            "layerFrame" : {
+              "y" : 85,
+              "x" : 42,
+              "width" : 50,
+              "height" : 50
+            },
+            "name" : "exit"
+          },
+          {
+            "maskFrame" : null,
+            "id" : "AAA0CB82-C917-454B-B4A4-57F4A2276611",
+            "visible" : true,
+            "children" : [
+
+            ],
+            "image" : {
+              "path" : "images\/Layer-title-AAA0CB82-C917-454B-B4A4-57F4A2276611.png",
+              "frame" : {
+                "y" : 73,
+                "x" : 235,
+                "width" : 279,
+                "height" : 68
+              }
+            },
+            "imageType" : "png",
+            "layerFrame" : {
+              "y" : 73,
+              "x" : 235,
+              "width" : 279,
+              "height" : 68
+            },
+            "name" : "title"
           }
-        },
+        ],
+        "id" : "776130AB-A924-41AC-A41E-8C573827454A",
+        "visible" : true,
         "imageType" : "png",
         "layerFrame" : {
-          "y" : 176,
-          "x" : 320,
-          "width" : 110,
-          "height" : 14
+          "y" : 73,
+          "x" : 42,
+          "width" : 672,
+          "height" : 117
         },
-        "name" : "pgController"
+        "name" : "topBar"
       },
       {
         "maskFrame" : null,
@@ -89,101 +179,206 @@ window.__imported__["automat/layers.json.js"] = [
 
         ],
         "image" : {
-          "path" : "images\/Layer-extra-37483080-F391-494E-968B-62EB8BB04839.png",
+          "path" : "images\/Layer-extra2-37483080-F391-494E-968B-62EB8BB04839.png",
           "frame" : {
-            "y" : 260,
-            "x" : 492,
+            "y" : 570,
+            "x" : 299,
             "width" : 152,
             "height" : 152
           }
         },
         "imageType" : "png",
         "layerFrame" : {
-          "y" : 260,
-          "x" : 492,
+          "y" : 570,
+          "x" : 299,
           "width" : 152,
           "height" : 152
         },
-        "name" : "extra"
+        "name" : "extra2"
       },
       {
         "maskFrame" : null,
-        "id" : "4DD49805-EFED-4FE5-AB81-D9050F0A4EAA",
+        "id" : "3099A703-CCC7-4F0C-9CCC-CC312BEF90DD",
         "visible" : true,
         "children" : [
 
         ],
         "image" : {
-          "path" : "images\/Layer-div-4DD49805-EFED-4FE5-AB81-D9050F0A4EAA.png",
+          "path" : "images\/Layer-extra1small-3099A703-CCC7-4F0C-9CCC-CC312BEF90DD.png",
           "frame" : {
-            "y" : 579,
+            "y" : 545,
+            "x" : 193,
+            "width" : 76,
+            "height" : 76
+          }
+        },
+        "imageType" : "png",
+        "layerFrame" : {
+          "y" : 545,
+          "x" : 193,
+          "width" : 76,
+          "height" : 76
+        },
+        "name" : "extra1small"
+      },
+      {
+        "maskFrame" : null,
+        "id" : "5EE3269C-263F-4AB9-991D-1EA4C8C8765B",
+        "visible" : true,
+        "children" : [
+
+        ],
+        "image" : {
+          "path" : "images\/Layer-extra1-5EE3269C-263F-4AB9-991D-1EA4C8C8765B.png",
+          "frame" : {
+            "y" : 570,
             "x" : 107,
-            "width" : 538,
-            "height" : 2
+            "width" : 152,
+            "height" : 152
           }
         },
         "imageType" : "png",
         "layerFrame" : {
-          "y" : 579,
+          "y" : 570,
           "x" : 107,
-          "width" : 538,
-          "height" : 2
+          "width" : 152,
+          "height" : 152
         },
-        "name" : "div"
+        "name" : "extra1"
       },
       {
         "maskFrame" : null,
-        "id" : "962E8BC7-6783-4D83-B339-DFE08A4821BB",
-        "visible" : true,
         "children" : [
+          {
+            "maskFrame" : {
+              "y" : 960,
+              "x" : 277,
+              "width" : 196,
+              "height" : 196
+            },
+            "id" : "6D3E84C0-C2EF-446C-960D-83B2723B0559",
+            "visible" : true,
+            "children" : [
 
-        ],
-        "image" : {
-          "path" : "images\/Layer-exit-962E8BC7-6783-4D83-B339-DFE08A4821BB.png",
-          "frame" : {
-            "y" : 85,
-            "x" : 42,
-            "width" : 50,
-            "height" : 50
+            ],
+            "image" : {
+              "path" : "images\/Layer-arugula-6D3E84C0-C2EF-446C-960D-83B2723B0559.png",
+              "frame" : {
+                "y" : 960,
+                "x" : 277,
+                "width" : 196,
+                "height" : 196
+              }
+            },
+            "imageType" : "png",
+            "layerFrame" : {
+              "y" : 960,
+              "x" : 277,
+              "width" : 196,
+              "height" : 196
+            },
+            "name" : "arugula"
+          },
+          {
+            "maskFrame" : {
+              "y" : 960,
+              "x" : 493,
+              "width" : 196,
+              "height" : 196
+            },
+            "id" : "5CC69024-8B20-4E69-B13C-4B0DAD70754E",
+            "visible" : true,
+            "children" : [
+
+            ],
+            "image" : {
+              "path" : "images\/Layer-swissChard-5CC69024-8B20-4E69-B13C-4B0DAD70754E.png",
+              "frame" : {
+                "y" : 960,
+                "x" : 493,
+                "width" : 196,
+                "height" : 196
+              }
+            },
+            "imageType" : "png",
+            "layerFrame" : {
+              "y" : 960,
+              "x" : 493,
+              "width" : 196,
+              "height" : 196
+            },
+            "name" : "swissChard"
+          },
+          {
+            "maskFrame" : {
+              "y" : 646,
+              "x" : 62,
+              "width" : 196,
+              "height" : 196
+            },
+            "id" : "43FAB57A-BBE3-45EA-B3CC-F05F7A5CC169",
+            "visible" : true,
+            "children" : [
+
+            ],
+            "image" : {
+              "path" : "images\/Layer-butterheadLettuce-43FAB57A-BBE3-45EA-B3CC-F05F7A5CC169.png",
+              "frame" : {
+                "y" : 646,
+                "x" : 62,
+                "width" : 196,
+                "height" : 196
+              }
+            },
+            "imageType" : "png",
+            "layerFrame" : {
+              "y" : 646,
+              "x" : 62,
+              "width" : 196,
+              "height" : 196
+            },
+            "name" : "butterheadLettuce"
           }
-        },
+        ],
+        "id" : "55ADD548-179A-484C-9ACE-CD67B38FAEE6",
+        "visible" : true,
         "imageType" : "png",
         "layerFrame" : {
-          "y" : 85,
-          "x" : 42,
-          "width" : 50,
-          "height" : 50
+          "y" : 646,
+          "x" : 62,
+          "width" : 627,
+          "height" : 510
         },
-        "name" : "exit"
+        "name" : "selectedOptions"
       },
       {
         "maskFrame" : null,
-        "id" : "AAA0CB82-C917-454B-B4A4-57F4A2276611",
-        "visible" : true,
         "children" : [
+          {
+            "maskFrame" : null,
+            "id" : "37735699-592A-4D1B-9245-9C0C3C17903B",
+            "visible" : true,
+            "children" : [
 
-        ],
-        "image" : {
-          "path" : "images\/Layer-title-AAA0CB82-C917-454B-B4A4-57F4A2276611.png",
-          "frame" : {
-            "y" : 73,
-            "x" : 235,
-            "width" : 279,
-            "height" : 68
-          }
-        },
-        "imageType" : "png",
-        "layerFrame" : {
-          "y" : 73,
-          "x" : 235,
-          "width" : 279,
-          "height" : 68
-        },
-        "name" : "title"
-      },
-      {
-        "maskFrame" : null,
-        "children" : [
+            ],
+            "image" : {
+              "path" : "images\/Layer-underly1-37735699-592A-4D1B-9245-9C0C3C17903B.png",
+              "frame" : {
+                "y" : 656,
+                "x" : 72,
+                "width" : 176,
+                "height" : 176
+              }
+            },
+            "imageType" : "png",
+            "layerFrame" : {
+              "y" : 656,
+              "x" : 72,
+              "width" : 176,
+              "height" : 176
+            },
+            "name" : "underly1"
+          },
           {
             "maskFrame" : null,
             "children" : [
@@ -295,36 +490,6 @@ window.__imported__["automat/layers.json.js"] = [
             "visible" : true,
             "children" : [
               {
-                "maskFrame" : {
-                  "y" : 960,
-                  "x" : 277,
-                  "width" : 196,
-                  "height" : 196
-                },
-                "id" : "6D3E84C0-C2EF-446C-960D-83B2723B0559",
-                "visible" : true,
-                "children" : [
-
-                ],
-                "image" : {
-                  "path" : "images\/Layer-arugula-6D3E84C0-C2EF-446C-960D-83B2723B0559.png",
-                  "frame" : {
-                    "y" : 960,
-                    "x" : 277,
-                    "width" : 196,
-                    "height" : 196
-                  }
-                },
-                "imageType" : "png",
-                "layerFrame" : {
-                  "y" : 960,
-                  "x" : 277,
-                  "width" : 196,
-                  "height" : 196
-                },
-                "name" : "arugula"
-              },
-              {
                 "maskFrame" : null,
                 "id" : "318D3940-BECD-4247-B8F4-6A1D4B42808E",
                 "visible" : true,
@@ -350,34 +515,29 @@ window.__imported__["automat/layers.json.js"] = [
                 "name" : "underly2"
               },
               {
-                "maskFrame" : {
-                  "y" : 960,
-                  "x" : 493,
-                  "width" : 196,
-                  "height" : 196
-                },
-                "id" : "5CC69024-8B20-4E69-B13C-4B0DAD70754E",
+                "maskFrame" : null,
+                "id" : "A62B3FD0-4034-449B-B90B-85CA83A1E9BA",
                 "visible" : true,
                 "children" : [
 
                 ],
                 "image" : {
-                  "path" : "images\/Layer-swissChard-5CC69024-8B20-4E69-B13C-4B0DAD70754E.png",
+                  "path" : "images\/Layer-underly3-A62B3FD0-4034-449B-B90B-85CA83A1E9BA.png",
                   "frame" : {
-                    "y" : 960,
-                    "x" : 493,
-                    "width" : 196,
-                    "height" : 196
+                    "y" : 970,
+                    "x" : 503,
+                    "width" : 176,
+                    "height" : 176
                   }
                 },
                 "imageType" : "png",
                 "layerFrame" : {
-                  "y" : 960,
-                  "x" : 493,
-                  "width" : 196,
-                  "height" : 196
+                  "y" : 970,
+                  "x" : 503,
+                  "width" : 176,
+                  "height" : 176
                 },
-                "name" : "swissChard"
+                "name" : "underly3"
               },
               {
                 "maskFrame" : {
@@ -415,7 +575,7 @@ window.__imported__["automat/layers.json.js"] = [
               "frame" : {
                 "y" : 960,
                 "x" : 61,
-                "width" : 628,
+                "width" : 618,
                 "height" : 272
               }
             },
@@ -423,7 +583,7 @@ window.__imported__["automat/layers.json.js"] = [
             "layerFrame" : {
               "y" : 960,
               "x" : 61,
-              "width" : 628,
+              "width" : 618,
               "height" : 272
             },
             "name" : "row2"
@@ -494,90 +654,85 @@ window.__imported__["automat/layers.json.js"] = [
                 "name" : "basil"
               },
               {
-                "maskFrame" : {
-                  "y" : 646,
-                  "x" : 62,
-                  "width" : 196,
-                  "height" : 196
-                },
-                "id" : "43FAB57A-BBE3-45EA-B3CC-F05F7A5CC169",
+                "maskFrame" : null,
+                "id" : "2B22B939-8169-4283-AD75-C76871031796",
                 "visible" : true,
                 "children" : [
 
                 ],
                 "image" : {
-                  "path" : "images\/Layer-butterheadLettuce-43FAB57A-BBE3-45EA-B3CC-F05F7A5CC169.png",
+                  "path" : "images\/Layer-underly4-2B22B939-8169-4283-AD75-C76871031796.png",
                   "frame" : {
-                    "y" : 646,
-                    "x" : 62,
-                    "width" : 196,
-                    "height" : 196
+                    "y" : 656,
+                    "x" : 503,
+                    "width" : 176,
+                    "height" : 176
                   }
                 },
                 "imageType" : "png",
                 "layerFrame" : {
-                  "y" : 646,
-                  "x" : 62,
-                  "width" : 196,
-                  "height" : 196
+                  "y" : 656,
+                  "x" : 503,
+                  "width" : 176,
+                  "height" : 176
                 },
-                "name" : "butterheadLettuce"
+                "name" : "underly4"
               }
             ],
             "image" : {
               "path" : "images\/Layer-row1-786532D6-0211-4D02-B00B-2021214063A3.png",
               "frame" : {
                 "y" : 646,
-                "x" : 62,
-                "width" : 627,
+                "x" : 95,
+                "width" : 594,
                 "height" : 272
               }
             },
             "imageType" : "png",
             "layerFrame" : {
               "y" : 646,
-              "x" : 62,
-              "width" : 627,
+              "x" : 95,
+              "width" : 594,
               "height" : 272
             },
             "name" : "row1"
+          },
+          {
+            "maskFrame" : null,
+            "id" : "4DD49805-EFED-4FE5-AB81-D9050F0A4EAA",
+            "visible" : true,
+            "children" : [
+
+            ],
+            "image" : {
+              "path" : "images\/Layer-div-4DD49805-EFED-4FE5-AB81-D9050F0A4EAA.png",
+              "frame" : {
+                "y" : 579,
+                "x" : 107,
+                "width" : 538,
+                "height" : 2
+              }
+            },
+            "imageType" : "png",
+            "layerFrame" : {
+              "y" : 579,
+              "x" : 107,
+              "width" : 538,
+              "height" : 2
+            },
+            "name" : "div"
           }
         ],
-        "id" : "2E18614F-2640-46C9-9C18-D5414C0EA5DB",
+        "id" : "4F507A43-EEEC-4567-AA18-8749BFDBE093",
         "visible" : true,
         "imageType" : "png",
         "layerFrame" : {
-          "y" : 646,
+          "y" : 579,
           "x" : 61,
           "width" : 628,
-          "height" : 688
+          "height" : 755
         },
         "name" : "options"
-      },
-      {
-        "maskFrame" : null,
-        "id" : "37735699-592A-4D1B-9245-9C0C3C17903B",
-        "visible" : true,
-        "children" : [
-
-        ],
-        "image" : {
-          "path" : "images\/Layer-underly1-37735699-592A-4D1B-9245-9C0C3C17903B.png",
-          "frame" : {
-            "y" : 656,
-            "x" : 72,
-            "width" : 176,
-            "height" : 176
-          }
-        },
-        "imageType" : "png",
-        "layerFrame" : {
-          "y" : 656,
-          "x" : 72,
-          "width" : 176,
-          "height" : 176
-        },
-        "name" : "underly1"
       },
       {
         "maskFrame" : null,
@@ -612,7 +767,32 @@ window.__imported__["automat/layers.json.js"] = [
 
         ],
         "image" : {
-          "path" : "images\/Layer-butterheadLettuceDesc-7086EF78-D0D6-4DDA-A7D4-9EDA3F2B8C0C.png",
+          "path" : "images\/Layer-basilDesc-7086EF78-D0D6-4DDA-A7D4-9EDA3F2B8C0C.png",
+          "frame" : {
+            "y" : 759,
+            "x" : 157,
+            "width" : 54,
+            "height" : 22
+          }
+        },
+        "imageType" : "png",
+        "layerFrame" : {
+          "y" : 759,
+          "x" : 157,
+          "width" : 54,
+          "height" : 22
+        },
+        "name" : "basilDesc"
+      },
+      {
+        "maskFrame" : null,
+        "id" : "5191A795-A08F-45DE-9378-901FE23209D9",
+        "visible" : true,
+        "children" : [
+
+        ],
+        "image" : {
+          "path" : "images\/Layer-butterheadLettuceDesc-5191A795-A08F-45DE-9378-901FE23209D9.png",
           "frame" : {
             "y" : 449,
             "x" : 119,
