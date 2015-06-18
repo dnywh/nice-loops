@@ -10,45 +10,54 @@ Framer.Defaults.Animation =
 	time: 0.2
 	curve: 'spring(300, 35, 10)'
 	
-# Background/backdrop fill
-# bg = new BackgroundLayer
-# 	backgroundColor: 'black'
-# 	
+# Background/backdrop fill for fullscreen
+bg = new BackgroundLayer
+	backgroundColor: '#444'
+
+# container for fullscreen
+container = new Layer
+	width: width, height: height
+container.centerX()
+container.centerY()
+# turn on off taking fullscreen
+# container.scale = 0.75
+
+# Make this stick to the center if the window size changes
+window.onresize = ->
+	container.center()
+	
 # The background box for all this
 box = new Layer
 	backgroundColor: 'transparent'
 	width: width*4
 	height: height*4
-# box.centerX()
-# box.centerY()
-
-# Make this stick to the center if the window size changes
-# window.onresize = ->
-# 	box.center()
+	superLayer: container
 
 content = new Layer
 	backgroundColor: 'white'
 	width: contentWidth
 	height: contentHeight
 	borderRadius: 8
+	opacity: 0.9
+	superLayer: container
 content.center()
 		
 
 # top left corner
 bg1 = new Layer
-	x: 0, y: 0, width: width, height: height, superLayer: box, backgroundColor: 'blue'
+	x: 0, y: 0, width: width, height: height, superLayer: box, backgroundColor: '#00f687' # green
 
 # top right corner
 bg2 = new Layer
-	x: width, y: 0, width: width, height: height, superLayer: box, backgroundColor: 'pink'
+	x: width, y: 0, width: width, height: height, superLayer: box, backgroundColor: '#ff3b87' # pink
 
 # bottom right corner
 bg3 = new Layer
-	x: width, y: height, width: width, height: height, superLayer: box, backgroundColor: 'red'
+	x: width, y: height, width: width, height: height, superLayer: box, backgroundColor: '#50F2FB' # blue
 	
 # bottom left corner
 bg4 = new Layer
-	x: 0, y: height, width: width, height: height, superLayer: box, backgroundColor: 'green'
+	x: 0, y: height, width: width, height: height, superLayer: box, backgroundColor: '#9e78f4' # purple
 	
 content.on Events.Click, ->
 	# default state at 0, 0 (top left corner)
