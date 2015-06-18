@@ -1,11 +1,14 @@
 width = 750
 height = 1334
 
+contentWidth = 500
+contentHeight = 880
+
 shortcuts = require "shortcuts"
 
 Framer.Defaults.Animation = 
 	time: 0.2
-	curve: 'spring(330, 35, 10)'
+	curve: 'spring(300, 35, 10)'
 	
 # Background/backdrop fill
 # bg = new BackgroundLayer
@@ -25,8 +28,8 @@ box = new Layer
 
 content = new Layer
 	backgroundColor: 'white'
-	width: width/1.5
-	height: height/1.5
+	width: contentWidth
+	height: contentHeight
 	borderRadius: 8
 content.center()
 		
@@ -37,7 +40,7 @@ bg1 = new Layer
 
 # top right corner
 bg2 = new Layer
-	x: width, y: 0, width: width, height: height, superLayer: box, backgroundColor: 'yellow'
+	x: width, y: 0, width: width, height: height, superLayer: box, backgroundColor: 'pink'
 
 # bottom right corner
 bg3 = new Layer
@@ -47,28 +50,56 @@ bg3 = new Layer
 bg4 = new Layer
 	x: 0, y: height, width: width, height: height, superLayer: box, backgroundColor: 'green'
 	
-box.on Events.Click, ->
+content.on Events.Click, ->
 	# default state at 0, 0 (top left corner)
 	if box.x is 0 && box.y is 0
-		box.animate
-			properties:
-				x: -width
+		content.slideToLeft()
+		Utils.delay 0.2, ->
+			box.animate
+				properties:
+					x: -width
+		Utils.delay 0.4, ->
+			content.x = width
+			content.animate
+				properties:
+					x: (width - contentWidth) / 2 # 125
 				
 	# 750, 0 (top right corner)
 	if box.x is -width && box.y is 0
-		box.animate
-			properties:
-				y: -height
+		content.slideToTop()
+		Utils.delay 0.2, ->
+			box.animate
+				properties:
+					y: -height
+		Utils.delay 0.4, ->
+			content.y = height
+			content.animate
+				properties:
+					y: (height - contentHeight) / 2 # 227
 				
 	# 750, 1334 (bottom right corner)
 	if box.x is -width && box.y is -height
-		box.animate
-			properties:
-				x: 0
+		content.slideToRight()
+		Utils.delay 0.2, ->
+			box.animate
+				properties:
+					x: 0
+		Utils.delay 0.4, ->
+			content.x = -contentWidth
+			content.animate
+				properties:
+					x: (width - contentWidth) / 2 # 125
 				
 	# 750, 1334 (bottom left corner)
 	if box.x is 0 && box.y is -height
-		box.animate
-			properties:
-				y: 0
+		content.slideToBottom()
+		Utils.delay 0.2, ->
+			box.animate
+				properties:
+					y: 0
+		Utils.delay 0.4, ->
+			content.y = -contentHeight
+			content.animate
+				properties:
+					y: (height - contentHeight) / 2 # 227
 	
