@@ -1,4 +1,5 @@
-shortcuts = require "shortcuts"
+# Thanks to Balraj Chana
+# https://www.facebook.com/groups/framerjs/permalink/697925247001216/
 
 Framer.Defaults.Animation = 
 	time: 0.2
@@ -95,8 +96,10 @@ wrapperOut = new Animation
 	
 wrapperUp = new Animation
 	layer: wrapper
-	properties: y: 610, opacity: 1	
-		
+	properties: y: 610, opacity: 1
+
+# Create an array to hold the dots so we can target it later
+dots = []
 # Create the grid layers
 for rowIndex in [0...rows]
 	for colIndex in [0...cols]
@@ -111,7 +114,9 @@ for rowIndex in [0...rows]
 			superLayer: wrapper
 			opacity: 0.6
 			scale: 0.9
-			
+		
+		# Push dot into dots array
+		dots.push dot
 		# Create & tweak the states
 		dot.states.add
 			clicked: scale: 1.1, opacity: 1
@@ -131,20 +136,35 @@ for rowIndex in [0...rows]
 wrapper.centerX()
 wrapper.y = Screen.height
 
-
-
-
 # Starting animations
 Utils.delay 0.5, ->
 	textUp.start()
 Utils.delay 0.75, ->
 	wrapperUp.start()
 Utils.delay 1, ->
-	tickButtonUp.start()	
+	tickButtonUp.start()
+	
+# Functions
+allUp = () ->
+	# Reset everything
+	Utils.delay 0.2, ->	
+		text.opacity = 0
+		text.center()
+		
+		wrapper.opacity = 0
+		wrapper.y = Screen.height
+		
+		tickButton.states.switchInstant('default')
+		tickButton.y = Screen.height
+		
+		# Now bring it all back in
+		textUp.start()
+		wrapperUp.start()
+		tickButtonUp.start()
+
 
 # Animations when going to next screen
 tickButton.on Events.Click, ->
-	
 	if tickButton.states.current is 'ready'
 		textOut.start()
 		Utils.delay 0.1, ->
@@ -152,27 +172,18 @@ tickButton.on Events.Click, ->
 		Utils.delay 0.2, ->
 			tickButtonOut.start()
 		Utils.delay 0.3, ->
+			# Switch states back to default for each dot
+			dot.states.switch("default") for dot in dots
+			# background actions
 			if bg1.states.current is 'default'
 				bg1.states.switch('up')
+				allUp()
 			else if bg1.states.current is 'up' && bg2.states.current is 'default'
 				bg2.states.switch('up')
-			else if bg1.states.current is 'up' && bg2.states.current is 'up'
+				allUp()
+			else if bg2.states.current is 'up' && bg3.states.current is 'default'
 				bg3.states.switch('up')
+				allUp()
 			else if bg3.states.current is 'up' && bg4.states.current is 'default'
 				bg4.states.switch('up')
 		
-		# Reset everything
-		Utils.delay 0.5, ->	
-			text.opacity = 0
-			text.center()
-			
-			wrapper.opacity = 0
-			wrapper.y = Screen.height
-			
-			tickButton.states.switchInstant('default')
-			tickButton.y = Screen.height
-			
-			# Now bring it all back in
-			textUp.start()
-			wrapperUp.start()
-			tickButtonUp.start()
