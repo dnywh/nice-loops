@@ -667,7 +667,7 @@ Runtime = (function(superClass) {
   };
 
   Runtime.prototype.uncoffee = function(code) {
-    var compile, error, options, optionsEx, result;
+    var compile, error, options, optionsEx, ref, result;
     options = {
       sourceMap: true,
       filename: "app.coffee"
@@ -687,7 +687,10 @@ Runtime = (function(superClass) {
     result = compile(code, options, optionsEx);
     if (result.error != null) {
       error = new SyntaxError(result.error.message);
-      error.lineNumber = result.error.location.first_line + 1;
+      error.lineNumber = -1;
+      if (result.error.location != null) {
+        error.lineNumber = ((ref = result.error.location) != null ? ref.first_line : void 0) + 1;
+      }
       bridge.sendError(error);
       throw new Error("Framer syntax error line " + error.lineNumber + ": " + e.message);
     }
