@@ -1,3 +1,5 @@
+# http://share.framerjs.com/xict24gecuxw/
+
 Framer.Defaults.Animation = 
 	time: 0.2
 	curve: 'spring(200, 35, 10)'
